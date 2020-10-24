@@ -1,10 +1,12 @@
-node('pwsh') {
-    stage('Checkout') {
-        checkout scm
+pipeline {
+  agent {
+      label "ADF"
+  }
+  stages {
+    stage('Run pwsh') {
+      steps {
+        sh 'pwd '
+      }
     }
-    stage('Build'){
-        container('pwsh') {
-            // This is where we build our code.
-        }
-    }
+  }
 }
