@@ -26,7 +26,7 @@ pipeline {
 }
         
         
-        sh 'pwd '
+        sh 'az account list'
       }
     }
   }
