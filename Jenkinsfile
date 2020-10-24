@@ -1,9 +1,9 @@
-node('pwd') {
+node('pwsh') {
     stage('Checkout') {
         checkout scm
     }
     stage('Build'){
-        container('pwd') {
+        container('pwsh') {
             // This is where we build our code.
         }
     }
