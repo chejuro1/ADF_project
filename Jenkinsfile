@@ -1,20 +1,10 @@
-pipeline {
-    agent any 
-    stages {
-        stage('Build') { 
-            steps {
-                // 
-            }
-        }
-        stage('Test') { 
-            steps {
-                // 
-            }
-        }
-        stage('Deploy') { 
-            steps {
-                // 
-            }
+node('pwd') {
+    stage('Checkout') {
+        checkout scm
+    }
+    stage('Build'){
+        container('pwd') {
+            // This is where we build our code.
         }
     }
 }
