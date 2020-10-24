@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+   agent {
+     kubernetes {
+     //cloud 'kubernetes'
+     label 'pwsh'
+              }
+  }
 
     stages {
         stage('Build') {
