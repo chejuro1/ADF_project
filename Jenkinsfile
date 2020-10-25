@@ -4,7 +4,7 @@ pipeline {
   }
     environment {
        
-      serviceADF = credentials('serviceADF')
+      //serviceADF = credentials('serviceADF')
       //$tenantID = credentials('jenkins-aws-secret-key-id')
        //$appId = credentials('jenkins-aws-secret-key-id')
        //$clientSecrets = credentials('jenkins-aws-secret-key-id')
@@ -17,9 +17,10 @@ pipeline {
   stages {
     stage('AZ connection') {
       steps {
-         //withCredentials([azureServicePrincipal('serviceADF')]) {
-        //sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
-         // }
+        withCredentials([azureServicePrincipal('serviceADF1')]) {
+          sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
+           }
+         
       
         echo "My client id is $AZURE_CLIENT_ID"
         echo "My client secret is $AZURE_CLIENT_SECRET"
