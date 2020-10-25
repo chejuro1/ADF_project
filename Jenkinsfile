@@ -2,7 +2,7 @@ pipeline {
   agent {
       label "ADF"
   }
-    //environment {
+    environment {
        
       
       
@@ -12,7 +12,7 @@ pipeline {
        resourceGroupName = "test"
        factoryName = "devOps_test"
        apiVersion = "2018-06-01"
-   // }
+   }
   
   stages {
     stage('AZ connection') {
