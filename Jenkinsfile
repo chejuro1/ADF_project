@@ -2,7 +2,7 @@ pipeline {
   agent {
       label "ADF"
   }
-    environment {
+    //environment {
        
       //serviceADF = credentials('serviceADF')
       //$tenantID = credentials('jenkins-aws-secret-key-id')
@@ -12,7 +12,7 @@ pipeline {
        //$resourceGroupName = "<your resource group to create the factory>"
        //$factoryName = "<specify the name of data factory to create. It must be globally unique.>"
        //$apiVersion = "2018-06-01"
-    }
+   // }
   
   stages {
     stage('AZ connection') {
