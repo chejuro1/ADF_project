@@ -9,8 +9,8 @@ pipeline {
        //$appId = credentials('jenkins-aws-secret-key-id')
        //$clientSecrets = credentials('jenkins-aws-secret-key-id')
        $subscriptionId = "7dc654d6-8566-4e2f-a781-1eadeb4e7734"
-       $resourceGroupName = "<your resource group to create the factory>"
-       $factoryName = "<specify the name of data factory to create. It must be globally unique.>"
+       $resourceGroupName = "test"
+       $factoryName = "devOps_test"
        $apiVersion = "2018-06-01"
    // }
   
