@@ -8,10 +8,10 @@ pipeline {
       
        //$appId = credentials('jenkins-aws-secret-key-id')
        //$clientSecrets = credentials('jenkins-aws-secret-key-id')
-       $subscriptionId = "7dc654d6-8566-4e2f-a781-1eadeb4e7734"
-       $resourceGroupName = "test"
-       $factoryName = "devOps_test"
-       $apiVersion = "2018-06-01"
+       subscriptionId = "7dc654d6-8566-4e2f-a781-1eadeb4e7734"
+       resourceGroupName = "test"
+       factoryName = "devOps_test"
+       apiVersion = "2018-06-01"
    // }
   
   stages {
