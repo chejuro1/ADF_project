@@ -29,25 +29,27 @@ pipeline {
       
     }
     stage('pwsh') {
-        agent {
-    docker {
-        image 'mcr.microsoft.com/powershell'
-        label 'pwsh'
-        args  '-v /tmp:/tmp'
-          }
-     }
+      //  agent {
+    //docker {
+      //  image 'mcr.microsoft.com/powershell'
+        //label 'pwsh'
+        //args  '-v /tmp:/tmp'
+          //}
+     //}
       
       steps{
-         //container('pwsh') {
+          dockerNode(connector: attach(user: 'docker'), image: 'mcr.microsoft.com/powershell') {
+    
            powershell '''Get-AzureRmResourceGroup -Location Eastus |
              Sort ResourceGroupName | 
             Format-Wide ResourceGroupName -Column 4'''
-            //              }
+           
+    } 
+         
          
             }
           }
-  }
- 
+
   
 }
 
