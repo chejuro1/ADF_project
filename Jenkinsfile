@@ -38,13 +38,14 @@ pipeline {
      //}
       
       steps{
-          dockerNode(connector: attach(user: 'docker'), image: 'mcr.microsoft.com/powershell') {
-    
+          withDockerContainer(args: 'it', image: 'mcr.microsoft.com/powershell') {
            powershell '''Get-AzureRmResourceGroup -Location Eastus |
              Sort ResourceGroupName | 
             Format-Wide ResourceGroupName -Column 4'''
+        }
            
-    } 
+           
+    
          
          
             }
