@@ -37,6 +37,4 @@ pipeline {
     }
   }
 }
-withEnv(['subscriptionId = "7dc654d6-8566-4e2f-a781-1eadeb4e7734"', 'resourceGroupName = "test"', 'factoryName = "devOps_test"', 'apiVersion = "2018-06-01"']) {
-    // some block
-}
+
