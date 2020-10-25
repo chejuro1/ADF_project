@@ -28,6 +28,15 @@ pipeline {
       }
       
     }
+    stage('pwsh') {
+      steps{
+           powershell '''Get-AzureRmResourceGroup -Location Eastus |
+       Sort ResourceGroupName | 
+            Format-Wide ResourceGroupName -Column 4'''
+            }
+          }
   }
+ 
+  
 }
 
