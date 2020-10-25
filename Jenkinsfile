@@ -26,14 +26,7 @@ pipeline {
         
         sh 'az account list'
       }
-      steps{
-        withEnv(['subscriptionId = "7dc654d6-8566-4e2f-a781-1eadeb4e7734"', 'resourceGroupName = "test"', 'factoryName = "devOps_test"', 'apiVersion = "2018-06-01"']) {
-          powershell '''Get-AzureRmResourceGroup -Location Eastus |
-   Sort ResourceGroupName | 
-   Format-Wide ResourceGroupName -Column 4'''
-         }
-        
-      }
+      
     }
   }
 }
