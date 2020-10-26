@@ -1,9 +1,12 @@
-node {
-    checkout scm
-
-    def customImage = docker.build("my-image:${env.BUILD_ID}")
-
-    customImage.inside {
-        sh 'make test'
+pipeline {
+    agent {
+        docker { image 'chejuro/myfirstrepo:v1.0' }
+    }
+    stages {
+        stage('Test') {
+            steps {
+                echo 'Hello world'
+            }
+        }
     }
 }
