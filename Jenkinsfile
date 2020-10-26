@@ -29,13 +29,13 @@ pipeline {
       
     }
     stage('pwsh') {
-      //  agent {
-    //docker {
-      //  image 'mcr.microsoft.com/powershell'
-        //label 'pwsh'
-        //args  '-v /tmp:/tmp'
-          //}
-     //}
+        agent {
+    docker {
+        image 'mcr.microsoft.com/powershell'
+        label 'pwsh'
+        args  '-v /tmp:/tmp'
+          }
+     }
       
       steps{
           withDockerContainer(args: 'it', image: 'mcr.microsoft.com/powershell') {
