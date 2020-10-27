@@ -8,12 +8,15 @@ pipeline {
             steps {
                 echo 'pwd'
                 sh 'ls'
+                sh 'cat test.py'
             }
         }
-        stage('Test') {
+        stage('Python') {
+            agent { docker { image 'python:3.5.1' } }
             steps {
-                echo 'Testing..'
+                sh 'python --version'
             }
+
         }
         stage('Deploy') {
             steps {
