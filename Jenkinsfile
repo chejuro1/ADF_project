@@ -6,8 +6,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'pwd'
-                sh 'ls'
+                sh 'pip install azure-mgmt-datafactory'
+                sh ' pip install azure-mgmt-resource'
                 sh 'pip3 list | grep azure'
                 sh 'python3 test.py'
             }
