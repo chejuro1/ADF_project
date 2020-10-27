@@ -67,12 +67,12 @@ def main():
     # resource_client.resource_groups.create_or_update(rg_name, rg_params)
 
     # # Create a data factory
-    # df_resource = Factory(location='eastus')
-    # df = adf_client.factories.create_or_update(rg_name, df_name, df_resource)
-    # print_item(df)
-    # while df.provisioning_state != 'Succeeded':
-    #     df = adf_client.factories.get(rg_name, df_name)
-    #     time.sleep(1)
+      df_resource = Factory(location='eastus')
+      df = adf_client.factories.create_or_update(rg_name, df_name, df_resource)
+      print_item(df)
+      while df.provisioning_state != 'Succeeded':
+          df = adf_client.factories.get(rg_name, df_name)
+          time.sleep(1)
 
     # Create an Azure Storage linked service
     ls_name = 'storageLinkedService'
