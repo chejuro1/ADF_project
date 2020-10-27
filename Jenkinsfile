@@ -6,9 +6,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+
+                
                 // sh  ' pip uninstall -y $(pip freeze | grep azure)'
-                sh 'pip install azure-mgmt-datafactory'
-                sh ' pip install azure-mgmt-resource'
+                // sh 'pip install azure-mgmt-datafactory'
+                // sh ' pip install azure-mgmt-resource'
                 sh 'pip3 list | grep azure'
                 sh 'python3 test.py'
             }
@@ -16,7 +18,7 @@ pipeline {
         stage('Python') {
             // agent { docker { image 'python:3.5.1' } }
             steps {
-                sh 'python --version'
+                sh 'python3 --version'
             }
 
         }
