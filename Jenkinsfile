@@ -6,6 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh  ' pip uninstall -y $(pip freeze | grep azure)'
                 sh 'pip install azure-mgmt-datafactory'
                 sh ' pip install azure-mgmt-resource'
                 sh 'pip3 list | grep azure'
