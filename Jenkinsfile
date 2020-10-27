@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo 'pwd'
                 sh 'ls'
-                sh 'cat test.py'
+                sh 'python3 --version'
             }
         }
         stage('Python') {
