@@ -5,7 +5,7 @@ pipeline {
      environment {
         subscriptionid   = credentials('subscriptionid')
         clientid  = credentials('clientid')
-        secret   = credentials('secret)
+        secret   = credentials('secret')
         tenant  = credentials('tenant')
         rgname = 'test'
         dfname = 'adfchejurotest'
