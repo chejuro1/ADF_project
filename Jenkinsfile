@@ -3,7 +3,7 @@
 pipeline {
     agent any
      environment {
-        subscriptionid = "7dc654d6-8566-4e2f-a781-1eadeb4e7734"
+        subscriptionid = credentials('subscriptionid')
         clientid = credentials('clientid')
         secret = credentials('secret')
         tenant = credentials('tenant')
