@@ -7,7 +7,7 @@ pipeline {
                      defaultValue: 'develop'
     }
     stages {
-        stage('Example') {
+        stage('Git') {
             steps {
                 checkout([$class: 'GitSCM', 
                           branches: [[name: "${params.TAG}"]], 
