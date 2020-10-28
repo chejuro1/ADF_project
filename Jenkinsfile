@@ -2,7 +2,15 @@
 
 pipeline {
     agent any
-
+     environment {
+        subscriptionid   = credentials('subscriptionid')
+        clientid  = credentials('clientid')
+        secret   = credentials('secret)
+        tenant  = credentials('tenant')
+        rgname = 'test'
+        dfname = 'adfchejurotest'
+        client_id='240569a0-0da7-4541-a8e6-e8b0e33ad020'
+    }
      parameters {
         gitParameter name: 'TAG', 
                      type: 'PT_TAG',
