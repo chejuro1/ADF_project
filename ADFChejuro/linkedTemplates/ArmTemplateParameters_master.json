@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "ADFChejuro"
 		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://adfchejuro.dfs.core.windows.net/"
+		},
 		"containerUri": {
 			"value": ""
 		},
