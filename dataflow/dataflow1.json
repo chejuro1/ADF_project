@@ -21,10 +21,6 @@
 			],
 			"sinks": [
 				{
-					"dataset": {
-						"referenceName": "ADF1",
-						"type": "DatasetReference"
-					},
 					"name": "sink1"
 				}
 			],
@@ -36,9 +32,10 @@
 			"scriptLines": [
 				"source(output(",
 				"          id as string,",
-				"          location as string,",
-				"          address as string,",
-				"          phone as string",
+				"          name as string,",
+				"          firstname as string,",
+				"          {age } as string,",
+				"          amount as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
@@ -47,10 +44,9 @@
 				"     multiLineRow: true) ~> source1",
 				"source(output(",
 				"          id as string,",
-				"          name as string,",
-				"          firstname as string,",
-				"          {age } as string,",
-				"          amount as string",
+				"          location as string,",
+				"          address as string,",
+				"          phone as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
@@ -63,15 +59,6 @@
 				"     broadcast: 'auto')~> join1",
 				"join1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     input(",
-				"          id as string,",
-				"          location as string,",
-				"          address as string,",
-				"          phone as string",
-				"     ),",
-				"     umask: 0022,",
-				"     preCommands: [],",
-				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
