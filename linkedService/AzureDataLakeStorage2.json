@@ -1,0 +1,15 @@
+{
+	"name": "AzureDataLakeStorage2",
+	"properties": {
+		"description": "ddd",
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://adfchejuro.dfs.core.windows.net/"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
