@@ -20,7 +20,11 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "join1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          id as string,",
@@ -42,7 +46,12 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
-				"     partitionBy('roundRobin', 2)) ~> source2"
+				"     partitionBy('roundRobin', 2)) ~> source2",
+				"source1, source2 join(fuzzyCompare(source1@id, source2@id, 80.00),",
+				"     joinType:'outer',",
+				"     matchType:'fuzzy',",
+				"     ignoreSpaces: false,",
+				"     broadcast: 'auto')~> join1"
 			]
 		}
 	}
