@@ -1,0 +1,9 @@
+{
+	"name": "ADFChejuro",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ca95ff51-524b-4799-bbe4-00ea41d9cc2f",
+		"tenantId": "563d1236-871d-4177-8577-aed6dbd8916b"
+	}
+}
